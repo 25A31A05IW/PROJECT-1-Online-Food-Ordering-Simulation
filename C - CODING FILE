@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+int main() {
+    int choice, qty;
+    float total = 0, bill;
+    char again;
+
+    printf("ONLINE FOOD ORDERING SIMULATION\n");
+
+    do {
+        printf("\nMenu:\n");
+        printf("1. Burger - Rs.120\n");
+        printf("2. Pizza - Rs.250\n");
+        printf("3. Sandwich - Rs.80\n");
+        printf("4. Biryani - Rs.180\n");
+        printf("5. Cool Drink - Rs.50\n");
+        printf("6. Ice Cream - Rs.90\n");
+
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        printf("Enter quantity: ");
+        scanf("%d", &qty);
+
+        switch(choice) {
+            case 1:
+                bill = 120 * qty;
+                printf("Burger added successfully\n");
+                break;
+
+            case 2:
+                bill = 250 * qty;
+                printf("Pizza added successfully\n");
+                break;
+
+            case 3:
+                bill = 80 * qty;
+                printf("Sandwich added successfully\n");
+                break;
+
+            case 4:
+                bill = 180 * qty;
+                printf("Biryani added successfully\n");
+                break;
+
+            case 5:
+                bill = 50 * qty;
+                printf("Cool Drink added successfully\n");
+                break;
+
+            case 6:
+                bill = 90 * qty;
+                printf("Ice Cream added successfully\n");
+                break;
+
+            default:
+                bill = 0;
+                printf("Invalid choice\n");
+        }
+
+        total += bill;
+
+        printf("Current Bill = Rs. %.2f\n", total);
+
+        printf("Do you want to order more? (y/n): ");
+        scanf(" %c", &again);
+
+    } while(again == 'y' || again == 'Y');
+
+    printf("Final Bill Amount = Rs. %.2f\n", total);
+    printf("Order Placed Successfully\n");
+    printf("Thank You for Ordering\n");
+
+    return 0;
+}
